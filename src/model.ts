@@ -5,7 +5,6 @@ interface Product {
     year: number;
     color: string;
     pantone_value: string;
-
 }
 
 interface ApiResponse {

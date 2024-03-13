@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Route, Link, useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Modal, Button, TextField, Box, Typography } from '@mui/material';
 import { Product } from '../model';
 import { useGetProductsQuery } from './api';
 import { useAppSelector } from '../configuration/hooks';
-import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
 
 const style = {
     position: 'absolute' as 'absolute',
@@ -17,7 +16,6 @@ const style = {
     boxShadow: 24,
     p: 4,
 };
-
 
 const ProductsTable = () => {
     const page = useAppSelector(state => state.table.page);
@@ -73,8 +71,6 @@ const ProductsTable = () => {
         }
         return renderTableRow(productsResponse.data);
     };
-
-
 
     return (
         <TableContainer component={Paper}>
